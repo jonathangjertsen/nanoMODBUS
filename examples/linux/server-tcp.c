@@ -28,7 +28,7 @@ nmbs_bitfield server_coils = {0};
 uint16_t server_registers[REGS_ADDR_MAX] = {0};
 
 nmbs_error handle_read_coils(uint16_t address, uint16_t quantity, nmbs_bitfield coils_out, void *arg) {
-    (void)arg;
+    UNUSED_PARAM(arg);
 
     if (address + quantity > COILS_ADDR_MAX + 1)
         return NMBS_EXCEPTION_ILLEGAL_DATA_ADDRESS;
@@ -44,7 +44,7 @@ nmbs_error handle_read_coils(uint16_t address, uint16_t quantity, nmbs_bitfield 
 
 
 nmbs_error handle_write_multiple_coils(uint16_t address, uint16_t quantity, const nmbs_bitfield coils, void *arg) {
-    (void)arg;
+    UNUSED_PARAM(arg);
 
     if (address + quantity > COILS_ADDR_MAX + 1)
         return NMBS_EXCEPTION_ILLEGAL_DATA_ADDRESS;
@@ -59,7 +59,7 @@ nmbs_error handle_write_multiple_coils(uint16_t address, uint16_t quantity, cons
 
 
 nmbs_error handler_read_holding_registers(uint16_t address, uint16_t quantity, uint16_t* registers_out, void *arg) {
-    (void)arg;
+    UNUSED_PARAM(arg);
 
     if (address + quantity > REGS_ADDR_MAX + 1)
         return NMBS_EXCEPTION_ILLEGAL_DATA_ADDRESS;
@@ -73,7 +73,7 @@ nmbs_error handler_read_holding_registers(uint16_t address, uint16_t quantity, u
 
 
 nmbs_error handle_write_multiple_registers(uint16_t address, uint16_t quantity, const uint16_t* registers, void *arg) {
-    (void)arg;
+    UNUSED_PARAM(arg);
 
     if (address + quantity > REGS_ADDR_MAX + 1)
         return NMBS_EXCEPTION_ILLEGAL_DATA_ADDRESS;
